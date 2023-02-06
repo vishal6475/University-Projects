@@ -1,0 +1,505 @@
+/* body, main and header styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;    
+    font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+    background-color: #f7f9fa;
+}
+main {
+    margin-top: 85px;
+}
+
+/* CSS for the header elements */
+header {
+    position: fixed;
+    width: 100vw;
+    height: 100px;
+    top:0;
+    left:0
+}
+#banner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px 10px;
+    background-color: #262626;
+    min-height: 60px;
+    border-bottom: 1px solid white;
+}
+.home-user-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#home-feed-btn, #user-profile-btn {
+    width: 80px;
+    height: 30px;
+}
+#home-feed-btn {
+    display: none;
+    margin-left: calc(50vw - 196px);
+}
+#user-profile-btn {
+    display: none;
+    margin-left: 10px;
+}
+#search-logout-box {    
+    margin-left: calc(50vw - 295px);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+#search-user {
+    display: none;
+    width: 120px;
+}
+#logout-btn {
+    display: none;
+    margin-bottom: 2px;
+    margin-left: 5px;
+}
+
+
+/* CSS for the footer elements */
+footer {
+    border-top: 1px solid white;
+    background-color: #262626;
+    padding: 10px;
+    margin-top: 15px;
+    min-height: 60px;
+    text-align: right;
+}
+ footer > * {
+    margin: 10px 25px;
+}
+
+/* CSS for login window */
+#login-window {
+    display: none;
+    background-color: #262626;
+    padding: 10px;    
+    height: calc(100vh - 171px);
+}
+#login-heading {
+    width: 110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#login-details {
+    width: 380px;    
+    margin: auto;
+    padding-top: 60px;
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    row-gap: 20px;
+}
+#sign-in-btn, #register-btn {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+/* CSS for registration window */
+#registration-window {
+    display: none;
+    background-color: #262626;
+    padding: 10px;    
+    height: calc(100vh - 171px);
+}
+#registration-heading {
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#registration-details {
+    width: 360px;    
+    margin: auto;
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    row-gap: 20px;
+}
+#back-btn, #submit-btn {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+/* CSS for some general elements */
+button {
+    border-radius: 3px;
+    border-width: 0;
+}
+button:focus {
+    outline: none;
+    box-shadow: none;
+  }
+button:hover {
+    cursor: pointer;
+}
+#follow-user-btn {
+    margin-top: 15px;
+}
+
+/* CSS for the main boxes which show the posts and have the page layout */
+#user-profile-page, #other-profile-page {
+    display: none;
+    width: 98.5vw;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#user-personal-message, #other-personal-message, #new-user-message {
+    padding-top: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
+#new-user-message {    
+    display: none;
+    background-color: #262626;
+    color:white;
+    width: 400px;
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+#user-personal-details {
+    width: 600px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 0px 10px 0px;
+    display: grid;
+    grid-template-columns: 2fr 4fr 13fr;
+}
+#edit-upload-btns {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+#edit-profile-btn, #upload-post-btn {
+    width: 90px;
+    height: 22px;
+    margin-left: 90px;
+}
+#upload-post-btn {
+    margin-left: 40px;
+}
+#other-personal-details {
+    width: 400px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 6px 0px 10px 0px;
+    display: grid;
+    grid-template-columns: 1fr 4fr 6fr ;
+}
+#user-personal-following-box, #other-personal-following-box {
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+}
+
+/* CSS for the post boxes which hold each image */
+#user-feed-box, #user-profile-feed-box, #other-profile-feed-box {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#user-feed-box {
+    display: none;
+}
+img {
+    width: 380px;
+    margin-top: 4px;
+}
+.post-box {
+    border-radius: 20px;
+    background-color: #262626;
+    margin-top: 10px;
+    padding: 6px 10px 10px 10px;
+}
+#user-personal-box, #other-personal-box {
+    background-color: #262626;
+}
+
+/* CSS for elements in each post box on all the pages:homepage, main user profile page and other users profile page */
+.post-author-box {
+    margin-top: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.post-author:hover, .post-liked-by-username:hover, .comment-author:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+.post-desc-box {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.post-desc {
+    padding-right: 5px;
+}
+.post-edit-btn {
+    width: 32px;
+    height: 16px;
+    padding: 1px 3px 2px 2px;
+}
+.likes-count-box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+.home-likes-count-btn, .user-likes-count-btn {
+    margin-left: 66px;
+    background-color: transparent;
+    color: white;
+    border: 0;  
+}
+.home-comments-count-btn, .user-comments-count-btn {
+    margin-left: 115px;
+    background-color: transparent;
+    color: white;
+    border: 0;  
+}
+.like-btn {
+    width: 58px;
+    margin-left: 66px;
+}
+.comment-btn {
+    width: 92px;
+    margin-left: 115px;
+}
+.likes-popup-box {   
+    position: relative;
+    margin-left: 10px;
+}
+.likes-popup {
+    background-color: white; 
+    color: black;   
+    width: 200px;
+    padding-left: 10px;
+    position: absolute;
+    visibility: hidden;    
+    border-radius: 6px;
+}
+.comment-write-box {
+    margin-top: 5px;
+    display: none;
+}
+.comment-text {
+    width: 372px;
+}
+.comments-show-box {
+    display: none;
+}
+.comment-author-date-box {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between; 
+}
+
+/* CSS for edit profile, update and upload post boxes */
+/* I haven't created single classes for these properties because I am using this IDs to manipulate these boxes
+to show content dynamically and I didn't want to create classes as I already have these IDs. This way no extra
+class names required and all these properties are being control from a single point.  */
+#edit-profile-box, #upload-post-box, #update-post-box, #edit-post-box {   
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 30vh;
+}
+#edit-profile-content, #upload-post-content, #update-post-content, #edit-post-content {
+    background-color: rgb(239, 239, 239); 
+    color: black; 
+    position: absolute;   
+    border-radius: 6px;
+    margin-left: 28vw;
+    width: 40vw;
+    min-width: 360px;
+    padding: 10px 20px;
+}
+#edit-profile-heading, #upload-image-heading, #update-post-heading, #edit-post-heading {
+    text-align: center;
+}
+#edit-profile-details, #upload-post-details, #update-post-details, #edit-post-details {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-column-gap: 15px;
+    grid-row-gap: 10px;
+}
+#edit-profile-details {
+    grid-template-rows: 4fr 4fr 4fr 1fr;
+}
+#upload-post-details {
+    grid-template-rows: 4fr 4fr 1fr;
+}
+#update-post-details, #edit-post-details {
+    grid-template-rows: 4fr 4fr 1fr;
+}
+#delete-post-confirm-btn, #delete-confirm-message {
+    display: none;
+}
+#edit-profile-confirm-box, #upload-post-confirm-box, #update-post-confirm-box, #edit-post-confirm-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#delete-update-box {
+    display: flex;
+    flex-direction: row;
+}
+#edit-post-update-op {
+    margin-left: 35px;
+}
+
+
+/* CSS for error, caution and success alert boxes */
+/* I haven't created single classes for these properties because I already have these IDs. This way no extra
+class names required and all these properties are being control from a single point. */
+#error-popup-box, #caution-popup-box, #success-popup-box{   
+    position: fixed;
+    display: none;
+    left: 0;
+    top: 30vh;
+}
+#error-popup-content, #caution-popup-content, #success-popup-content {
+    background-color: rgb(239, 239, 239); 
+    color: black; 
+    position: absolute;   
+    border-radius: 6px;
+    margin-left: 30vw;
+    width: 40vw;
+    padding: 10px 20px;
+}
+#error-popup-message {
+    color: #ab0303;
+}
+#caution-popup-message {
+    color: chocolate;
+}
+#success-popup-message {
+    color: #13ba3f;
+}
+#error-popup-heading, #caution-popup-heading, #success-popup-heading,
+#error-popup-message, #caution-popup-message, #success-popup-message {
+    text-align: center;
+}
+#error-popup-close-box, #caution-popup-close-box, #success-popup-close-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#error-popup-close-btn, #caution-popup-close-btn, #success-popup-close-btn {
+    border-color: black;
+    border-width: 1.5px;
+}
+
+
+/* media queries to change page dimensions when page width goes below 620px */
+@media screen and (max-width: 900px) {
+
+    /* To change modal boxes like edit and upload posts */
+    #edit-profile-content, #upload-post-content, #update-post-content, #edit-post-content {
+        margin-left: calc(50vw - 200.5px);
+        width: 340px;
+        padding: 10px 20px;
+    }
+}
+
+/* media queries to change page dimensions when page width goes below 620px */
+@media screen and (max-width: 620px) {
+
+    /* For header elements */
+    #search-logout-box {    
+        margin-left: calc(50vw - 228px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    /* For showing user details on user's profile page */
+    #user-personal-details {
+        width: 475px;
+    }
+}
+
+/* media queries to change page dimensions when page width goes below 475px */
+@media screen and (max-width: 475px) {
+
+    /* For header elements */
+    #search-logout-box {    
+        margin-left: calc(50vw - 193px);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    #search-user {
+        width: 100px;
+    }
+    #home-feed-btn {
+        margin-left: calc(50vw - 181px);
+    }
+    #home-feed-btn, #user-profile-btn {
+        width: 65px;
+        height: 40px;
+    }
+
+    /* For showing user details on user's profile page */
+    #user-personal-details {
+        width: 390px;
+        grid-template-columns: 1fr 5fr 15fr;
+    }
+}
+
+/* media queries to change page dimensions when page width goes below 620px */
+@media screen and (min-width: 1400px) {
+
+    /* For showing user details on user's profile page */
+    #user-personal-details {
+        width: 45vw;
+    }
+
+    /* To reshape the post box and image of each post on all 3 pages: homepage, user and other */
+    #user-feed-box, #user-profile-feed-box, #other-profile-feed-box {
+        width: 28.6vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    img {
+        width: calc(28.5vw - 20px);
+    }
+    .comment-text {
+        width: calc(28.5vw - 28px);
+    }
+    .home-likes-count-btn, .user-likes-count-btn {
+        margin-left: calc(7.15vw - 34px);
+        background-color: transparent;
+        color: white;
+        border: 0;  
+    }
+    .home-comments-count-btn, .user-comments-count-btn {
+        margin-left: calc(14.3vw - 85px);
+        background-color: transparent;
+        color: white;
+        border: 0;  
+    }
+    .like-btn {
+        width: 58px;
+        margin-left: calc(7.15vw - 34px);
+    }
+    .comment-btn {
+        width: 92px;
+        margin-left: calc(14.3vw - 85px);
+    }   
+}

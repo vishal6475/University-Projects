@@ -1,0 +1,8 @@
+Click>7.0
+Flask==1.1.2
+itsdangerous>0.24
+MarkupSafe==1.1.1
+Werkzeug==0.16.1
+flask-restx>=1.0.5
+Flask-Cors>3.0.6
+Pillow>8.1.2

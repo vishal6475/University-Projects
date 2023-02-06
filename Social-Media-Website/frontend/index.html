@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Quickpic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/provided.css" />
+    <script type="module" src="src/main.js"></script>   
+    <script type="module" src="src/helpers.js"></script>
+</head>
+<body>
+    
+    <!-- header of the page which remains fixed at top even when you scroll down -->
+    <header>
+        <div id="banner">
+
+            <div>
+                <h2>Quickpic</h2>
+            </div>
+                
+            <div class="home-user-btns">
+                <button id="home-feed-btn">Home</button>           
+                <button id="user-profile-btn">My Profile</button>
+            </div>
+
+            <div id="search-logout-box">
+                <div>
+                    <input type="text" id="search-user" placeholder="Search any user..." /> 
+                </div>
+                <div>
+                    <button id="logout-btn">Logout</button>
+                </div>
+            </div>
+                
+        </div>
+    </header>
+
+    <!-- main body of the page which contains all details and posts -->
+    <main role="main" id="main-body">
+
+        <!-- page for login window -->
+        <div id="login-window">
+            <h2 id="login-heading">Login</h2>
+            <div id="login-details">
+
+                <div>Username:</div>
+                <input type="text" id="username" placeholder="username" value="vishal"/>
+
+                <div>Password:</div>
+                <input type="password" id="password" placeholder="password" value="vishal6475"/>
+
+                <div>Confirm Password:</div>
+                <input type="password" id="confirm-password" placeholder="confirm password"/>        
+
+                <div>
+                    <button id="sign-in-btn">Sign In</button>
+                </div>
+                
+                <div>
+                    <button id="register-btn">Register</button>
+                </div>                
+
+            </div>
+        </div>      
+
+        <!-- page for registration window -->
+        <div id="registration-window" style="display:none">            
+            <h2 id="registration-heading">Registration Window</h2>
+            <div id="registration-details">
+
+                <div>Name:</div>
+                <input type="text" id="name-register" placeholder="name"/>
+
+                <div>Username:</div>
+                <input type="text" id="username-register" placeholder="username"/>
+
+                <div>Password:</div>
+                <input type="password" id="password-register" placeholder="password"/>
+
+                <div>Confirm Password:</div>
+                <input type="password" id="confirm-register" placeholder="confirm password"/>
+
+                <div>Email address:</div>
+                <input type="text" id="email-register" placeholder="email address"/>    
+                
+                <div>
+                    <button id="back-btn">Back</button>  
+                </div>
+
+                <div>
+                    <button id="submit-btn">Submit</button>  
+                </div>
+                
+            </div>                
+                              
+        </div>            
+              
+        <!-- box to hold all the posts of user feed -->
+        <div id="new-user-message"></div>
+
+        <!-- box to hold all the posts of user feed -->
+        <div id="user-feed-box"></div>
+
+        <!-- user profile page to show all details of the main user -->
+        <div id="user-profile-page">
+            <div id="user-personal-box">
+
+                <div id="user-personal-message"></div>
+
+                <!-- user personal details shown in grid layout -->
+                <div id="user-personal-details">    
+                    <div></div>            
+                    <div id="user-username">Username:</div>
+                    <div id="user-personal-username"></div>
+
+                    <div></div>            
+                    <div id="user-name">Name:</div>
+                    <div id="user-personal-name"></div>
+
+                    <div></div>            
+                    <div id="user-email">Email:</div>
+                    <div id="user-personal-email"></div>
+
+                    <div></div>            
+                    <div id="user-followed-by">Followed by:</div>
+                    <div id="user-personal-followed-by"></div>
+
+                    <div></div>            
+                    <div id="user-following">Following:</div>
+                    <div id="user-personal-following"></div>
+
+                    <div></div>            
+                    <div></div>
+                    <div id="user-personal-following-box">                  
+                    </div>
+                </div>
+
+                <div id="edit-upload-btns">
+                    <button id="edit-profile-btn">Edit profile</button>                  
+                    <button id="upload-post-btn">Make a Post</button>
+                </div>
+                
+            </div>
+
+            <!-- box to hold all the posts on main user's profile page -->
+            <div id="user-profile-feed-box"></div>
+        </div>
+
+
+        <!-- other user's public profile page to show all their details -->
+        <div id="other-profile-page">
+            <div id="other-personal-box">
+
+                <div id="other-personal-message"></div>
+
+                <!-- other user's personal details shown in grid layout -->
+                <div id="other-personal-details">     
+                    <div></div>           
+                    <div id="other-username">Username:</div>
+                    <div id="other-personal-username"></div>
+
+                    <div></div>           
+                    <div id="other-name">Name:</div>
+                    <div id="other-personal-name"></div>
+
+                    <div></div>           
+                    <div id="other-email">Email:</div>
+                    <div id="other-personal-email"></div>
+
+                    <div></div>           
+                    <div id="other-followed-by">Followed by:</div>
+                    <div id="other-personal-followed-by"></div>
+
+                    <div></div>           
+                    <div id="other-following">Following:</div>
+                    <div id="other-personal-following"></div>
+
+                    <div></div>           
+                    <div></div>
+                    <div id="other-personal-following-box">                  
+                    </div>
+
+                    <div></div>           
+                    <div></div>
+                    <div>
+                        <button id="follow-user-btn"></button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- box to hold all the posts on main user's profile page -->
+            <div id="other-profile-feed-box"></div>
+        </div>    
+
+        <!-- upload post box which becomes visible when user clicks on upload post button -->
+        <div id="upload-post-box">                       
+            <div id="upload-post-content">
+
+                <div id="upload-image-heading">Upload Image!</div>          
+
+                <div id="upload-post-details">
+                    <div id="upload-post-description">Description:</div>
+                    <input type="text" id="upload-post-description-txt"/> 
+                    <div id="upload-post-image">Image:</div>
+                    <input type="file" id="upload-post-image-src" /> 
+                </div>
+
+                <div id="upload-post-confirm-box">
+                    <button id="upload-post-confirm-btn">Confirm</button>
+                    <button id="upload-post-cancel-btn">Cancel</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- update post box which becomes visible when user clicks on update post button -->
+        <div id="update-post-box">                       
+            <div id="update-post-content">
+                <div id="update-post-heading">Update post description:</div>          
+
+                <div id="update-post-details">
+                    <div id="update-post-old">Old Description:</div>
+                    <div id="update-post-old-desc"></div>
+                    <div id="update-post-description">New Description:</div>
+                    <input type="text" id="update-post-description-txt"/> 
+                </div>
+
+                <div id="update-post-confirm-box">
+                    <button id="update-post-confirm-btn">Confirm</button>
+                    <button id="update-post-cancel-btn">Cancel</button>
+                </div>
+                
+            </div>
+        </div>        
+
+        <!-- edit post box which becomes visible when user clicks on edit post button -->
+        <div id="edit-post-box">                       
+            <div id="edit-post-content">
+
+                <div id="edit-post-heading">Edit post</div>          
+
+                <div id="edit-post-details">
+                    <div id="edit-post-old">Post Description:</div>
+                    <div id="edit-post-old-desc"></div>
+                    <div id="edit-post-description">Select Operation:</div>
+                    <div id="delete-update-box">
+                        <div id="edit-post-delete-op">Delete</div>
+                        <div id="edit-post-update-op">Update</div>
+                    </div>
+                    <div id="delete-confirm-message">Please click on confirm to delete this post.</div>
+                </div>
+
+                <div id="edit-post-confirm-box">
+                    <button id="delete-post-confirm-btn">Confirm</button>
+                    <button id="edit-post-cancel-btn">Cancel</button>
+                </div>
+                
+            </div>
+        </div>
+
+
+        <!-- edit profile box which becomes visible when user clicks on edit profile button -->
+        <div id="edit-profile-box">                       
+            <div id="edit-profile-content">    
+
+                <div id="edit-profile-heading">Update profile details:</div>             
+
+                <div id="edit-profile-details">
+                    <div id="edit-name">New name:</div>
+                    <input type="text" id="edit-name-new"/> 
+                    <div id="edit-email">New email:</div>
+                    <input type="text" id="edit-email-new" /> 
+                    <div id="edit-password">New password:</div>
+                    <input type="text" id="edit-password-new"/> 
+                </div>
+
+                <div id="edit-profile-confirm-box">
+                    <button id="edit-profile-confirm-btn">Confirm</button>
+                    <button id="edit-profile-cancel-btn">Cancel</button>
+                </div>
+    
+            </div>
+        </div>
+
+        <!-- error pop up box which becomes visible when any error alert is shown to user -->
+        <div id="error-popup-box">                       
+            <div id="error-popup-content">    
+
+                <div id="error-popup-heading">Error alert:</div>             
+
+                <h5 id="error-popup-message"></h5>                
+
+                <div id="error-popup-close-box">
+                    <button id="error-popup-close-btn">Close</button>
+                </div>
+    
+            </div>
+        </div>
+
+        <!-- cautiom pop up box which becomes visible when any caution alert is shown to user -->
+        <div id="caution-popup-box">                       
+            <div id="caution-popup-content">    
+                
+                <div id="caution-popup-heading">Caution alert:</div>             
+
+                <h5 id="caution-popup-message"></h5>                
+
+                <div id="caution-popup-close-box">
+                    <button id="caution-popup-close-btn">Close</button>
+                </div>
+    
+            </div>
+        </div>
+
+        <!-- success pop up box which becomes visible when any success alert is shown to user -->
+        <div id="success-popup-box">                       
+            <div id="success-popup-content">    
+                
+                <div id="success-popup-heading">Success message!</div>             
+
+                <h5 id="success-popup-message"></h5>                
+
+                <div id="success-popup-close-box">
+                    <button id="success-popup-close-btn">Close</button>
+                </div>
+    
+            </div>
+        </div>
+    
+    </main>
+
+    <footer>
+        <p>&copy; Quickpic</p>
+    </footer>
+    
+</body>
+</html>
