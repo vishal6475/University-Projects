@@ -19,6 +19,6 @@ They can make new posts, see posts of other people they are following, and like 
 7. Run the command `cd frontend` to go to frontend folder.
 8. Run the command `python3 -m http.server` to start up an HTTP server which will run the 'index.html' file.
 
-### Using the BigBrain website:  
+### Using the Quickpic website:  
 9. Open the browser and open link http://localhost:8000 (or whatever link mentioned in terminal after doing step 8) to start browsing the Quickpic website.
 10. Close all the opened terminals to shut down both the backend and frontend systems.
