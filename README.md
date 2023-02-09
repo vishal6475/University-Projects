@@ -18,25 +18,27 @@ https://www.youtube.com/watch?v=I369FPd0gQY
 
 ## 3-Client-Server-Chat-Networking-Program  
 
-As part of this networking project, I made a client and a server and both are capable of sending messages between each other. The server should be started first and will keep record of all the users joined (clients) and the public messages. The server would also be rsponsible for authenticating the clients. Any user can login or register as a client. Users would be able to start private chats between each other, or start group chats with more than two people. 
+As part of this networking project, I made a client and a server, and both are capable of sending messages between each other. The server should be started first and will keep record of all the users (clients) joined and the public messages. The server would also be rsponsible for authenticating the clients. Any user can login or register as a client. Users would be able to start private chats between each other, start group chats with more than two people, and receive or broadcast messages to public chat forums. 
 
 ## 4-REST-APIs-Flask  
 
-
+For this Python Flask project, I created several REST APIs to perform GET, PUT, POST, PATCH and DELETE operations. These APIs first connect to an existing API (which hosts TV actor's data) to fetch data and store it in a local database. Then the other API methods can retrieve, update and delete data from the local database. It also provides methods to generate different stats on the database data.
 
 ## 5-Big-Data-Projects  
 
-For Big Data, I developed 3 medium level projects.
+For Big Data, I developed 3 medium level projects. First project was a Hadoop MapReduce project to calculate the relative frequency of all word pairs in a text file, while the other two were SPARK projects. One SPARK project involved using GraphX Pregel operator to find if a triangle (cyclic path with three vertices) exists in a directed graph. For the other SPARK project, I used Google Dataproc to find similarity value between all record pairs in a text file whose similarity value is above the threshold.
 
 ## 6-Machine-Learning-Kaggle-Project  
 
-For this Machine Learning projet, we built an algorithm to identify and categorize the input data consisting of question-answer pairs. The data for this competition contained several thousands question-answer pairs which were categorized into 30 different labels. As part of this competition, we were needed to analyze 30 labels and predict the correct question-answer categories for the test data.
+For this Machine Learning projet, we built an algorithm to analyze and categorize the input data consisting of question-answer pairs. The data for this competition contained several thousands question-answer pairs which were categorized into 30 different labels. As part of this competition, we were needed to analyze 30 labels and predict the correct question-answer categories for the test data.
 
 ## 7-Maze-Solver  
 
+This was a complicated project which involved reading a input text file describing a maze. The input file would contain numbers 0-3 defining the positions of walls in a cell of the maze grid. I created a class Maze which includes several methods to analyze and solve the maze. These methods finds out the gates, number of entry-exit paths in the maze, accessible areas, cul-de-sacs, and finally prints the total stats and creates a Latex file for the visual demonstration.
+
 ## 8-Neural-Networks-Cats-Classifier  
 
-This project involves analyzing the input cat data and developing a neural network to classify cats into 8 different breeds.
+This project involves analyzing the input cat data, training and developing a neural network to classify cats into 8 different breeds.
 
 ## 9-Roman-Arabic-Roman
 
