@@ -22,3 +22,5 @@ They can make new posts, see posts of other people they are following, and like 
 ### Using the Quickpic website:  
 9. Open the browser and open link http://localhost:8000 (or whatever link mentioned in terminal after doing step 8) to start browsing the Quickpic website.
 10. Close all the opened terminals to shut down both the backend and frontend systems.
+
+**Note:** I only built frontend application for this project and the backend system code was provided by the university.
