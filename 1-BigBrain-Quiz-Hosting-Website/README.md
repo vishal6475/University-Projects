@@ -27,3 +27,5 @@ Players are able to join any started game using the game session ID provided by 
 ### Using the BigBrain website:  
 10. Open the browser and open link http://localhost:3000 to start browsing the BigBrain website.
 11. Close all the opened terminals to shut down both the backend and frontend systems.
+
+**Note:** I only built frontend application for this project and the backend system code was provided by the university.
