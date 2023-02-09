@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const AnswerBox = styled.div`
   width: 100%;
   border-style: solid;
-  background-color: #a85732;
+  background-color: 'white';
   border-radius: 10px;
   border-width: 1px;
   display: grid;

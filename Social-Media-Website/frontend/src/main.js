@@ -588,10 +588,12 @@ const addEventLikePost = (event, page) => {
 
     // if button is Like, we will call fetch to like this post
     if (event.target.innerText === 'Like'){
+        event.target.innerText = 'Unlike';
 
         const likesPostFetch = fetch('http://localhost:5000/post/like?id='+ postID, fetchMethodHeaderWithToken('PUT', token))
         likesPostFetch.then((likePost) =>{
             if (likePost.status !== 200) {
+                event.target.innerText = 'Like';
                 showErrorAlert('Error in liking the post');
             } else if (likePost.status === 200) {
                 event.target.innerText = 'Unlike';
@@ -602,9 +604,11 @@ const addEventLikePost = (event, page) => {
         });
 
     } else { // else if button is Unlike, we will call fetch to unlike this post
+        event.target.innerText = 'Like';
         const unlikePostFetch = fetch('http://localhost:5000/post/unlike?id='+ postID, fetchMethodHeaderWithToken('PUT', token))
         unlikePostFetch.then((unlikePost) =>{
             if (unlikePost.status !== 200) {
+                event.target.innerText = 'Unlike';
                 showErrorAlert('Error in unliking the post');
             } else if (unlikePost.status === 200) {
                 event.target.innerText = 'Like';
@@ -1036,7 +1040,7 @@ const checkScrollToBottom = () => {
         if (userHasAnyFeed > 0) {
             clearInterval(intervalCheckBottom);
             loadMoreUserFeedPosts();      
-            setTimeout(() => {intervalCheckBottom = setInterval(checkScrollToBottom, 2000);}, 2000)  
+            setTimeout(() => {intervalCheckBottom = setInterval(checkScrollToBottom, 4000);}, 2000)  
         }
         
     }
@@ -1426,7 +1430,7 @@ const loadPagesOnRefresh = () => {
 const setAllIntervals = () => {
     if (!intervalLiveUpdateUserFeed) {
         intervalCheckBottom = setInterval(checkScrollToBottom, 2000);
-        intervalLiveUpdateUserFeed = setInterval(liveUpdateUserFeed, 10000);    
+        intervalLiveUpdateUserFeed = setInterval(liveUpdateUserFeed, 800);    
         intervalLiveUpdateComments = setInterval(liveUpdateComments, 1000);       
         intervalLiveUpdateLikes =  setInterval(liveUpdateLikes, 1000);  
     }

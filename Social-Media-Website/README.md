@@ -11,7 +11,7 @@ They can make new posts, see posts of other people they are following, and like 
 
 ### Install the dependencies and start the backend system:  
 3. Run the command `cd backend` to go to backend folder.
-4. Run the command `pip3 install -r requirements` to install all the dependencies for the backend system.
+4. Run the command `pip3 install -r requirements.txt` to install all the dependencies for the backend system.
 5. Run the command `python3 run.py` to start the backend system and API services.
 
 ### Install the dependencies and start the frontend application:  
