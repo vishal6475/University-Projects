@@ -12,3 +12,4 @@ You complete this step every time you want to start the server.
 
 2. Within your `backend` folder in your project repo (i.e. the folder this `README.md` is in), run the command `python3 run.py`. This will start the server and needs to be done every time.
 
+**Note:** This backend system code was provided by the university and the frontend application was built by me.
